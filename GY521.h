@@ -95,6 +95,10 @@ public:
   float    getGyroY()    { return _gy; };
   float    getGyroZ()    { return _gz; };
 
+  float    getAccelRawX() { return _axRaw; };
+  float    getAccelRawY() { return _ayRaw; };
+  float    getAccelRawZ() { return _azRaw; };
+
   //  EXPERIMENTAL
   //  pitch, roll and yaw is work in progress.
   float    getPitch()    { return _pitch; };
@@ -130,7 +134,8 @@ private:
 
   uint8_t  _afs = 0;                //  sensitivity factor
   float    _raw2g = GY521_RAW2G;    //  raw data to gravity g's
-  float    _ax, _ay, _az;           //  accelerometer raw
+  float    _axRaw, _ayRaw, _azRaw   //  raw value from accelerometer
+  float    _ax, _ay, _az;           //  accelerometer raw in gs
   float    _aax, _aay, _aaz;        //  accelerometer processed
 
   uint8_t  _gfs = 0;
