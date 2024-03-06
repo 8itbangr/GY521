@@ -150,6 +150,10 @@ int16_t GY521::read()
   _gy = _WireRead2();           //  GYRO_YOUT_H   GYRO_YOUT_L
   _gz = _WireRead2();           //  GYRO_ZOUT_H   GYRO_ZOUT_L
 
+  _axRaw = _ax;
+  _ayRaw = _ay;
+  _azRaw = _az;
+  
   //  duration interval
   now = micros();
   float duration = (now - _lastMicros) * 1e-6;  //  duration in seconds.
@@ -271,6 +275,10 @@ int16_t GY521::readAccel()
   _ax = _WireRead2();  //  ACCEL_XOUT_H  ACCEL_XOUT_L
   _ay = _WireRead2();  //  ACCEL_YOUT_H  ACCEL_YOUT_L
   _az = _WireRead2();  //  ACCEL_ZOUT_H  ACCEL_ZOUT_L
+
+  _axRaw = _ax;
+  _ayRaw = _ay;
+  _azRaw = _az;
 
   //  next lines might be merged per axis.
 
